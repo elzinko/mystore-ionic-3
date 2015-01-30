@@ -1,1 +1,7 @@
 /* Empty. Add your own CSS if you like */
+
+.item {
+    padding: 2px;
+    border-width: 0px;
+    border-style: none;
+}

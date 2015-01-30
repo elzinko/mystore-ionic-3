@@ -6,20 +6,14 @@
         <!--on-refresh="loadMoreData()">-->
         <!--</ion-refresher>-->
         <div class="list">
-            <div class="item" ng-repeat="photo in photos">
-                <img ng-src='{{photo.url}}' style='width:100%; position:relative;'>
-                <!-- padding-bottom:"{{item.padding}}%"-->
+            <div class="item" ng-repeat="photo in Gallery.photos">
+                <img ng-src='{{photo.url}}' style='width:100%; position:relative;padding-bottom:"{{photo.padding}}%"' adjust-image>
+
             </div>
         </div>
 
         <!-- Infinite Scroll is activated here to load if more pages exist. -->
-        <!--<ion-infinite-scroll on-infinite="loadMorePhotos()" ng-if="more"></ion-infinite-scroll>-->
-        <ion-refresher
-        pulling-text="Pull to refresh..."
-        refreshing-text="loading..."
-        on-refresh="loadMorePhotos()"
-                >
-        </ion-refresher>
+        <ion-infinite-scroll on-infinite="loadMore()" ng-if="Gallery.more"></ion-infinite-scroll>
     </ion-content>
 </ion-view>
 
